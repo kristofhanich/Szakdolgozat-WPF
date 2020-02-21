@@ -11,8 +11,8 @@
     <Grid Background="White">
         <Image x:Name="Kep" HorizontalAlignment="Left" Height="207" Margin="277,10,0,0" VerticalAlignment="Top" Width="234"/>
         <Label x:Name="AruNeveL" Content="Árucikk neve" HorizontalAlignment="Left" Margin="327,230,0,0" VerticalAlignment="Top" Height="36" Width="115"/>
-        <Button x:Name="NextBtn" Content="Következő" HorizontalAlignment="Left" Margin="587,141,0,0" VerticalAlignment="Top" Height="64" Width="76" Click="NextBtn_Click"/>
-        <Button x:Name="PrevBtn" Content="Előző" HorizontalAlignment="Left" Margin="139,141,0,0" VerticalAlignment="Top" Height="64" Width="76" Click="PrevBtn_Click"/>
+        <Button x:Name="NextBtn" Content="Következő" HorizontalAlignment="Left" Margin="587,141,0,0" VerticalAlignment="Top" Height="64" Width="100" Click="NextBtn_Click"/>
+        <Button x:Name="PrevBtn" Content="Előző" HorizontalAlignment="Left" Margin="139,141,0,0" VerticalAlignment="Top" Height="64" Width="100" Click="PrevBtn_Click"/>
         <Label Content="db van belőle" HorizontalAlignment="Left" Margin="422,336,0,0" VerticalAlignment="Top"/>
         <Label x:Name="LeirasL" Content="valami" HorizontalAlignment="Left" Margin="419,253,0,0" VerticalAlignment="Top"/>
         <Label Content="Leírás" HorizontalAlignment="Left" Margin="327,253,0,0" VerticalAlignment="Top"/>

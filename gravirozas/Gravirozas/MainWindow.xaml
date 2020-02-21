@@ -7,12 +7,17 @@
         mc:Ignorable="d"
         Title="MűhelyApp" Height="600" Width="800">
     <Grid>
-        <Button Content="Rendelés felvétele" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="110" Click="Rendeles_leadasa"/>
-        <Button x:Name="TermekFelvitele" Content="Új termék felvitele" HorizontalAlignment="Left" Margin="171,10,0,0" VerticalAlignment="Top" Width="110" Click="TermekFelvitele_Click"/>
-        <Button x:Name="ugyfel_regisztralasa" Content="Új ügyfél regisztrálása" HorizontalAlignment="Left" Margin="325,10,0,0" VerticalAlignment="Top" Width="130" Click="ugyfel_regisztralasa_Click"/>
-        <Button Content="Raktárkészlet feltöltése" HorizontalAlignment="Left" Margin="522,10,0,0" VerticalAlignment="Top" Width="130" Click="raktar_feltolt"/>
-        <Button x:Name="raktar" Content="Raktár" HorizontalAlignment="Left" Margin="707,10,0,0" VerticalAlignment="Top" Width="75" Click="raktar_Click"/>
-        <Frame x:Name="Main" Content="Válasszon egy menüt!" HorizontalAlignment="Left" Height="524" Margin="10,35,0,0" VerticalAlignment="Top" Width="772"/>
+        <Grid Height="47" VerticalAlignment="Top" HorizontalAlignment="Center">
+            <Button Content="Rendelés felvétele" Margin="10,10,0,0" VerticalAlignment="Top" Click="Rendeles_leadasa" Background="#FF3246C1" BorderBrush="#FF3A73B7" HorizontalAlignment="Left" Width="156"/>
+            <Button x:Name="TermekFelvitele" Content="Új termék felvitele" Margin="171,10,0,0" VerticalAlignment="Top" Click="TermekFelvitele_Click" Background="#FF3246C1" BorderBrush="#FF3A73B7" HorizontalAlignment="Left" Width="149"/>
+            <Button x:Name="ugyfel_regisztralasa" Content="Új ügyfél regisztrálása" Margin="325,10,0,0" VerticalAlignment="Top" Click="ugyfel_regisztralasa_Click" Background="#FF3246C1" BorderBrush="#FF3A73B7" HorizontalAlignment="Left" Width="180"/>
+            <Button Content="Raktárkészlet feltöltése" Margin="510,10,0,0" VerticalAlignment="Top" Click="raktar_feltolt" Background="#FF3246C1" BorderBrush="#FF3A73B7" HorizontalAlignment="Left" Width="180"/>
+            <Button x:Name="raktar" Content="Raktár" Margin="695,10,0,0" VerticalAlignment="Top" Click="raktar_Click" Background="#FF3246C1" BorderBrush="#FF3A73B7" HorizontalAlignment="Left" Width="87"/>
+        </Grid>
+
+
+        <Frame x:Name="Main" Content="Válasszon egy menüt!" HorizontalAlignment="Left" NavigationUIVisibility="Hidden" Height="512" Margin="10,47,0,0" VerticalAlignment="Top" Width="772"/>
+        <Image Source="/bin/debug/logo.png"  HorizontalAlignment="Left" Height="68" Margin="714,491,0,0" VerticalAlignment="Top" Width="68" RenderTransformOrigin="0.456,0.5"/>
 
     </Grid>
 </Window>
