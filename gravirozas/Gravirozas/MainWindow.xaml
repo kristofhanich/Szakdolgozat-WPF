@@ -1,0 +1,18 @@
+﻿<Window x:Class="Gravirozas.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Gravirozas"
+        mc:Ignorable="d"
+        Title="MűhelyApp" Height="600" Width="800">
+    <Grid>
+        <Button Content="Rendelés felvétele" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="110" Click="Rendeles_leadasa"/>
+        <Button x:Name="TermekFelvitele" Content="Új termék felvitele" HorizontalAlignment="Left" Margin="171,10,0,0" VerticalAlignment="Top" Width="110" Click="TermekFelvitele_Click"/>
+        <Button x:Name="ugyfel_regisztralasa" Content="Új ügyfél regisztrálása" HorizontalAlignment="Left" Margin="325,10,0,0" VerticalAlignment="Top" Width="130" Click="ugyfel_regisztralasa_Click"/>
+        <Button Content="Raktárkészlet feltöltése" HorizontalAlignment="Left" Margin="522,10,0,0" VerticalAlignment="Top" Width="130" Click="raktar_feltolt"/>
+        <Button x:Name="raktar" Content="Raktár" HorizontalAlignment="Left" Margin="707,10,0,0" VerticalAlignment="Top" Width="75" Click="raktar_Click"/>
+        <Frame x:Name="Main" Content="Válasszon egy menüt!" HorizontalAlignment="Left" Height="524" Margin="10,35,0,0" VerticalAlignment="Top" Width="772"/>
+
+    </Grid>
+</Window>

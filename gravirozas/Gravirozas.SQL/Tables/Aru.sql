@@ -1,0 +1,9 @@
+﻿CREATE TABLE [dbo].[Aru]
+(
+	[Id] INT NOT NULL PRIMARY KEY IDENTITY,
+	[Nev] NVARCHAR(255) NOT NULL,
+	[Leiras] Text NOT NULL,
+	[Mennyiseg] INT NOT NULL,
+	[Ar] INT NOT NULl,
+	[Kep] NVARCHAR(255)
+)
