@@ -15,7 +15,7 @@
         <Label Content="Telefonszám:" HorizontalAlignment="Left" Margin="274,238,0,0" VerticalAlignment="Top"/>
         <TextBox x:Name="CimTB" HorizontalAlignment="Left" Margin="400,211,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
         <TextBox x:Name="TelefonTB" HorizontalAlignment="Left" Margin="400,246,0,0" Text="+36" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <Button x:Name="Regisztral" Content="Regisztrál" HorizontalAlignment="Left" Margin="351,323,0,0" VerticalAlignment="Top" Height="29" Width="103" Click="Regisztral_Click"/>
+        <Button x:Name="Regisztral" Content="Regisztrál" HorizontalAlignment="Left" Margin="351,323,0,0" VerticalAlignment="Top" Height="29" Width="103" Click="Regisztral_Click" Background="#FF3246C1" BorderBrush="#FF3246C1"/>
 
     </Grid>
 </Page>

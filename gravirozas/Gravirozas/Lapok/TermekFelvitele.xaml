@@ -11,16 +11,20 @@
     <Grid>
         <Label Content="db van belőle" HorizontalAlignment="Left" Margin="372,328,0,0" VerticalAlignment="Top"/>
         <Label Content="Ár:" HorizontalAlignment="Left" Margin="330,302,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="ArTB" HorizontalAlignment="Left" Margin="369,305,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="DarabTB" HorizontalAlignment="Left" Margin="330,333,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="37"/>
-        <TextBox x:Name="LeirasTB" HorizontalAlignment="Left" Margin="369,138,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="222" Height="162"/>
-        <Button x:Name="Felvitel" Content="Felvitel" HorizontalAlignment="Center" Margin="346,402,372,0" VerticalAlignment="Top" Height="29" Width="82" Click="Felvitel_Click"/>
+        <TextBox x:Name="ArTB" HorizontalAlignment="Left" Margin="369,305,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Foreground="Black"/>
+        <TextBox x:Name="DarabTB" HorizontalAlignment="Left" Margin="330,333,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="37" Foreground="Black"/>
+        <TextBox x:Name="LeirasTB" HorizontalAlignment="Left" Margin="369,138,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="222" Height="162" Foreground="Black"/>
+        <Button x:Name="Felvitel" Content="Felvitel" HorizontalAlignment="Center" Margin="346,402,372,0" VerticalAlignment="Top" Height="29" Width="82" Click="Felvitel_Click" Background="#FF3246C1" BorderBrush="#FF3246C1"/>
         <Label Content="Leírás" HorizontalAlignment="Left" Margin="302,137,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="NevTB" HorizontalAlignment="Left" Margin="369,115,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="NevTB" HorizontalAlignment="Left" Margin="369,115,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" BorderBrush="#89000000" Foreground="Black">
+            <TextBox.Background>
+                <ImageBrush/>
+            </TextBox.Background>
+        </TextBox>
         <Label Content="Név" HorizontalAlignment="Left" Margin="309,115,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.427,-1.736"/>
-        <TextBox x:Name="KepTB" IsReadOnly="True" HorizontalAlignment="Left" Margin="302,359,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="187" Height="38"/>
+        <TextBox x:Name="KepTB" IsReadOnly="True" HorizontalAlignment="Left" Margin="302,359,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="187" Height="38" Foreground="Black"/>
         <Label Content="Kép tallózása" HorizontalAlignment="Left" Margin="212,353,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.854,0.423"/>
-        <Button Content="Tallózás" HorizontalAlignment="Left" Margin="501,359,0,0" VerticalAlignment="Top" Width="90" Click="Talloz_Click"/>
+        <Button Content="Tallózás" HorizontalAlignment="Left" Margin="501,359,0,0" VerticalAlignment="Top" Width="90" Click="Talloz_Click" Background="#FF3246C1" BorderBrush="#FF3246C1"/>
 
     </Grid>
 </Page>

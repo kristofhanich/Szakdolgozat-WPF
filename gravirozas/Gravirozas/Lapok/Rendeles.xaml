@@ -8,21 +8,36 @@
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
       Title="Rendeles">
-      
+
     <Grid Background="White">
-        <Label Content="Ügyfél:" HorizontalAlignment="Left" Margin="333,171,0,0" VerticalAlignment="Top" Width="46"/>
-        <Label Content="Vásárolt árucikk:" HorizontalAlignment="Left" Margin="284,202,0,0" VerticalAlignment="Top"/>
-        <ComboBox x:Name="VasaroltAruCB" SelectionChanged="VasaroltAruCB_SelectionChanged" HorizontalAlignment="Left" Margin="387,204,0,0" VerticalAlignment="Top" Width="120"/>
-        <Label Content="Darabszám:" HorizontalAlignment="Left" Margin="318,277,0,0" VerticalAlignment="Top"/>
-        <ComboBox x:Name="UgyfelCB"  HorizontalAlignment="Left" Margin="387,171,0,0" VerticalAlignment="Top" Width="120"/>
-        <Label Content="Elérhető:" HorizontalAlignment="Left" Margin="323,246,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="ElerhetoL" Content="db" HorizontalAlignment="Left" Margin="397,246,0,0" VerticalAlignment="Top"/>
-        <Button x:Name="Lekeres" Content="Indít" HorizontalAlignment="Left" Margin="351,323,0,0" VerticalAlignment="Top" Height="29" Width="70" Click="Lekeres_Click"/>
-        <ComboBox x:Name="darabCB" SelectionChanged="darabCB_SelectionChanged" HorizontalAlignment="Left" Margin="389,279,0,0" VerticalAlignment="Top" Width="58" Height="24" IsEnabled="False"/>
-        <DatePicker x:Name="HataridoDP" SelectedDateChanged="HataridoDP_SelectedDateChanged" HorizontalAlignment="Left" Margin="569,279,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="dateL" Content="Határidő:" HorizontalAlignment="Left" Margin="498,278,0,0" VerticalAlignment="Top" Width="56"/>
-        <Label Content="Teljes ár:" HorizontalAlignment="Left" Margin="498,246,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="teljesarL" Content="" HorizontalAlignment="Left" Margin="569,248,0,0" VerticalAlignment="Top"/>
+        <Label Content="Ügyfél:" HorizontalAlignment="Left" Margin="310,44,0,0" VerticalAlignment="Top" Width="46"/>
+        <Label Content="Vásárolt árucikk:" HorizontalAlignment="Left" Margin="261,75,0,0" VerticalAlignment="Top"/>
+        <ComboBox x:Name="VasaroltAruCB" SelectionChanged="VasaroltAruCB_SelectionChanged" HorizontalAlignment="Left" Margin="364,77,0,0" VerticalAlignment="Top" Width="120"/>
+        <Label Content="Darabszám:" HorizontalAlignment="Left" Margin="295,150,0,0" VerticalAlignment="Top"/>
+        <ComboBox x:Name="UgyfelCB"  HorizontalAlignment="Left" Margin="364,44,0,0" VerticalAlignment="Top" Width="120"/>
+        <Label Content="Elérhető:" HorizontalAlignment="Left" Margin="300,119,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="ElerhetoL" Content="db" HorizontalAlignment="Left" Margin="374,119,0,0" VerticalAlignment="Top"/>
+        <Button x:Name="Lekeres" Content="Indít" HorizontalAlignment="Left" Margin="354,196,0,0" VerticalAlignment="Top" Height="29" Width="70" Click="Lekeres_Click" Background="#FF3246C1" BorderBrush="#FF3246C1"/>
+        <ComboBox x:Name="darabCB" SelectionChanged="darabCB_SelectionChanged" HorizontalAlignment="Left" Margin="366,152,0,0" VerticalAlignment="Top" Width="58" Height="24" IsEnabled="False"/>
+        <DatePicker x:Name="HataridoDP" SelectedDateChanged="HataridoDP_SelectedDateChanged" HorizontalAlignment="Left" Margin="546,152,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="dateL" Content="Határidő:" HorizontalAlignment="Left" Margin="475,151,0,0" VerticalAlignment="Top" Width="56"/>
+        <Label Content="Teljes ár:" HorizontalAlignment="Left" Margin="475,119,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="teljesarL" Content="" HorizontalAlignment="Left" Margin="546,121,0,0" VerticalAlignment="Top"/>
+        <ListView Name="rendelesekLista" HorizontalAlignment="Left" Height="200" Margin="10,240,0,0" VerticalAlignment="Top" Width="780" Foreground="#DDFF0000">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Rendelő"/>
+                    <GridViewColumn Header="Rendelt áru"/>
+                    <GridViewColumn Header="Dátum"/>
+                    <GridViewColumn Header="Határidő"/>
+                    <GridViewColumn Header="Darab"/>
+                    <GridViewColumn Header="Fizetendő"/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+
+
+
 
     </Grid>
 </Page>

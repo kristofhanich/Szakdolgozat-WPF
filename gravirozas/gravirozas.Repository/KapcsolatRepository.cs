@@ -62,11 +62,33 @@ namespace Gravirozas.Repository
             return result;
         }
 
+        public List<Kapcsolat> GetAll()
+        {
+            List<Kapcsolat> result = new List<Kapcsolat>();
+
+            using (SqlConnection connection = new SqlConnection(Connection.String))
+            {
+                SqlCommand command = connection.CreateCommand();
+                command.CommandType = CommandType.StoredProcedure;
+                command.CommandText = "KapcsolatGetAll";
+
+                connection.Open();
+
+                using (SqlDataReader reader = command.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        result.Add(Mapentity(reader));
+                    }
+                }
+            }
+
+            return result;
+        }
 
         private Kapcsolat Mapentity(SqlDataReader data)
         {
             Kapcsolat result = new Kapcsolat();
-            result.ID = int.Parse(data["ID"].ToString());
             result.AruID = int.Parse(data["AruID"].ToString());
             result.UgyfelID = int.Parse(data["UgyfelID"].ToString());
             result.Datum = DateTime.Parse(data["Datum"].ToString());

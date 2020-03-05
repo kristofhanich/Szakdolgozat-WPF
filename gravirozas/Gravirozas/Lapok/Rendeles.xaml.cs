@@ -60,6 +60,24 @@ namespace Gravirozas.Lapok
             }
 
             HataridoDP.DisplayDateStart = DateTime.Now;
+
+            /*Lista feltöltése*/
+            /*https://www.wpf-tutorial.com/listview-control/listview-with-gridview/ */
+            List <Kapcsolat> lista= new List<Kapcsolat>();
+
+            ResponseMessage<List<Kapcsolat>> request_kapcsolat = _kapcsolatService.GetAll();
+            if (request_aru == null || !request_aru.IsSuccess || request_aru.ResponseObject == null)
+            {
+                MessageBox.Show(request_kapcsolat.ErrorMessage);
+            }
+
+            foreach (var item in request_kapcsolat.ResponseObject)
+            {
+                lista.Add(item);/*.UgyfelID , item.AruID, item.Datum, item.HatarIdo, item.Darab, item.TeljesAr}*/
+                rendelesekLista.ItemsSource = lista;/*emiatt dob hibát*/
+            }
+
+
         }
 
         public void Frissit(int id)
@@ -71,7 +89,7 @@ namespace Gravirozas.Lapok
             {
                 MessageBox.Show(request_menny.ErrorMessage);
             }*/
-            if (request_menny == 0)
+                if (request_menny == 0)
             {
                 ElerhetoL.Content = "Nem elérhető!";
                 darabCB.IsEnabled = false;
@@ -116,7 +134,7 @@ namespace Gravirozas.Lapok
                 return;
             }
 
-            int teljesar = (int)(Math.Ceiling((DateTime.Parse(HataridoDP.SelectedDate.ToString()) - DateTime.Now).TotalDays) * (_aruService.GetByID(int.Parse(VasaroltAruCB.SelectedItem.ToString().Split(' ')[0])).ResponseObject.Ar)) * int.Parse(darabCB.SelectedItem.ToString());
+            int teljesar = Convert.ToInt16(_aruService.GetByID(int.Parse(VasaroltAruCB.SelectedItem.ToString().Split(' ')[0])).ResponseObject.Ar) * int.Parse(darabCB.SelectedItem.ToString());
             teljesarL.Content = teljesar;
         }
 
@@ -133,7 +151,7 @@ namespace Gravirozas.Lapok
             temp.AruID = _aruService.GetByID(int.Parse(VasaroltAruCB.SelectedItem.ToString().Split(' ')[0])).ResponseObject.Id;
             temp.Darab = int.Parse(darabCB.SelectedItem.ToString());
             temp.HatarIdo= DateTime.Parse(HataridoDP.SelectedDate.ToString());
-            temp.TeljesAr = (int)((temp.HatarIdo - DateTime.Now).TotalDays * _aruService.GetByID(int.Parse(VasaroltAruCB.SelectedItem.ToString().Split(' ')[0])).ResponseObject.Ar) * int.Parse(darabCB.SelectedItem.ToString());
+            temp.TeljesAr = Convert.ToInt16(_aruService.GetByID(int.Parse(VasaroltAruCB.SelectedItem.ToString().Split(' ')[0])).ResponseObject.Ar) * int.Parse(darabCB.SelectedItem.ToString());
             DateTime val = _kapcsolatService.Create(temp).ResponseObject.Datum;
             if (val != null)
             {

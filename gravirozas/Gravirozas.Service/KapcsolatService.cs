@@ -9,11 +9,11 @@ namespace Gravirozas.Service
 {
     public class KapcsolatService
     {
-        private readonly KapcsolatRepository _osszekotesRepository = null;
+        private readonly KapcsolatRepository _kapcsolatRepository = null;
 
         public KapcsolatService()
         {
-            _osszekotesRepository = new KapcsolatRepository();
+            _kapcsolatRepository = new KapcsolatRepository();
         }
 
         public ResponseMessage<Kapcsolat> Create(Kapcsolat entity)
@@ -22,7 +22,7 @@ namespace Gravirozas.Service
 
             try
             {
-                response.ResponseObject = _osszekotesRepository.Create(entity);
+                response.ResponseObject = _kapcsolatRepository.Create(entity);
                 response.IsSuccess = true;
                 response.ErrorMessage = "Success";
             }
@@ -42,7 +42,7 @@ namespace Gravirozas.Service
 
             try
             {
-                response.ResponseObject = _osszekotesRepository.GetByID(id);
+                response.ResponseObject = _kapcsolatRepository.GetByID(id);
                 response.IsSuccess = true;
                 response.ErrorMessage = "Success";
             }
@@ -54,5 +54,25 @@ namespace Gravirozas.Service
 
             return response;
         }
+
+        public ResponseMessage<List<Kapcsolat>> GetAll()
+        {
+            ResponseMessage<List<Kapcsolat>> response = new ResponseMessage<List<Kapcsolat>>();
+
+            try
+            {
+                response.ResponseObject = _kapcsolatRepository.GetAll();
+                response.IsSuccess = true;
+                response.ErrorMessage = "Success";
+            }
+            catch (Exception ex)
+            {
+                response.IsSuccess = false;
+                response.ErrorMessage = ex.Message;
+            }
+
+            return response;
+        }
+
     }
 }
