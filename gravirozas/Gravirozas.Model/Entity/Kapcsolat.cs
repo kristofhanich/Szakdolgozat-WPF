@@ -29,5 +29,10 @@ namespace Gravirozas.Model.Entity
             TeljesAr = teljesAr;
         }
 
+        public override string ToString()
+        {
+            return $"{UgyfelID}";
+        }
+
     }
 }

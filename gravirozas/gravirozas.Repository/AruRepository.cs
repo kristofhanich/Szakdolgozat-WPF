@@ -34,7 +34,7 @@ namespace Gravirozas.Repository
                 return entity;
             }
         }
-
+        /*
         public Aru Felvitel(string nev, string leiras, int mennyiseg, int ar)
         {
             using (SqlConnection connection = new SqlConnection(Connection.String))
@@ -67,7 +67,7 @@ namespace Gravirozas.Repository
                 return entity;
             }
         }
-
+        */
         public Aru Update(Aru entity)
         {
             using (SqlConnection connection = new SqlConnection(Connection.String))

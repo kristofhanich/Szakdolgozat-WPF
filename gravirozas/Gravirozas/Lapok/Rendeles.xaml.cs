@@ -26,11 +26,15 @@ namespace Gravirozas.Lapok
         private readonly UgyfelService _ugyfelService = null;
         private readonly AruService _aruService = null;
         private readonly KapcsolatService _kapcsolatService = null;
+        private readonly KapcsolatListaService _kapcsolatListaService = null;
+
         public Rendeles()
         {
             _ugyfelService = new UgyfelService();
             _aruService = new AruService();
             _kapcsolatService = new KapcsolatService();
+            _kapcsolatListaService = new KapcsolatListaService();
+
             InitializeComponent();
         }
         private void OnLoad(object sender, RoutedEventArgs e)
@@ -61,23 +65,27 @@ namespace Gravirozas.Lapok
 
             HataridoDP.DisplayDateStart = DateTime.Now;
 
+            FeltoltLista();
+        }
+
+        private void FeltoltLista()
+        {
             /*Lista feltöltése*/
             /*https://www.wpf-tutorial.com/listview-control/listview-with-gridview/ */
-            List <Kapcsolat> lista= new List<Kapcsolat>();
+            List<Kapcsolat> lista = new List<Kapcsolat>();
 
-            ResponseMessage<List<Kapcsolat>> request_kapcsolat = _kapcsolatService.GetAll();
-            if (request_aru == null || !request_aru.IsSuccess || request_aru.ResponseObject == null)
+            ResponseMessage<List<KapcsolatLista>> request_kapcsolatLista = _kapcsolatListaService.GetAll();
+            if (request_kapcsolatLista == null || !request_kapcsolatLista.IsSuccess || request_kapcsolatLista.ResponseObject == null)
             {
-                MessageBox.Show(request_kapcsolat.ErrorMessage);
+                MessageBox.Show(request_kapcsolatLista.ErrorMessage);
             }
 
-            foreach (var item in request_kapcsolat.ResponseObject)
+            foreach (var item in request_kapcsolatLista.ResponseObject)
             {
                 lista.Add(item);/*.UgyfelID , item.AruID, item.Datum, item.HatarIdo, item.Darab, item.TeljesAr}*/
-                rendelesekLista.ItemsSource = lista;/*emiatt dob hibát*/
             }
-
-
+            //rendelesekLista.ItemsSource = lista;/*emiatt dob hibát*/
+            rendelesekLista.ItemsSource = lista;
         }
 
         public void Frissit(int id)
@@ -160,7 +168,7 @@ namespace Gravirozas.Lapok
                 _aruService.Update(gep);
                 MessageBox.Show("Sikeres vásárlás rögzítés!");
                 Frissit(int.Parse(VasaroltAruCB.SelectedItem.ToString().Split(' ')[0]));
-
+                FeltoltLista();
             }
             else
             {

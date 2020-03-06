@@ -27,6 +27,7 @@ namespace Gravirozas.Model.Entity
             Ar = ar;
             Kep = kep;
         }
+        
         public Aru(Aru Aru)
         {
             Id = Aru.Id;
@@ -36,6 +37,7 @@ namespace Gravirozas.Model.Entity
             Ar = Aru.Ar;
             Kep = Aru.Kep;
         }
+        
 
     }
 }

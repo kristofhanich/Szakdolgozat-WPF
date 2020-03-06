@@ -16,6 +16,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.IO;
 using Microsoft.Win32;
+using Gravirozas.Model;
 
 namespace Gravirozas.Lapok
 {
@@ -54,18 +55,16 @@ namespace Gravirozas.Lapok
                     Ar = int.Parse(ArTB.Text),
                     Kep = KepTB.Text
                 };
-                
-                entity = _aruService.Create(entity).ResponseObject;
-                if(!_aruService.Create(entity).IsSuccess)
+
+                ResponseMessage<Aru> request = _aruService.Create(entity);
+
+                if (!request.IsSuccess)
+                {
                     MessageBox.Show(_aruService.Create(entity).ErrorMessage);
-                if (entity != null)
-                {
-                    MessageBox.Show("Sikeres árufelvitel!");
+                    return;
                 }
-                else
-                {
-                    MessageBox.Show("Hiba az árufelvitelben!");
-                }
+
+                MessageBox.Show("Sikeres árufelvitel!");
             }
         }
 

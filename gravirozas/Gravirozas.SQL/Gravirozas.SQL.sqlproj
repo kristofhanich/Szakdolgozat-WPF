@@ -83,5 +83,6 @@
     <Build Include="StoredProcedures\Osszekotes\KapcsolatGetByID.sql" />
     <Build Include="StoredProcedures\Aru\AruCreate.sql" />
     <Build Include="StoredProcedures\Osszekotes\KapcsolatGetAll.sql" />
+    <Build Include="StoredProcedures\Osszekotes\KapcsolatListaGetAll.sql" />
   </ItemGroup>
 </Project>

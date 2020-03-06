@@ -16,7 +16,7 @@
         </Grid>
 
 
-        <Frame x:Name="Main" Content="Válasszon egy menüt!" HorizontalAlignment="Left" NavigationUIVisibility="Hidden" Height="512" Margin="10,47,0,0" VerticalAlignment="Top" Width="772"/>
+        <Frame x:Name="Main" Content="Válasszon egy menüt!" NavigationUIVisibility="Hidden" Margin="10,47,10,10"/>
         <Image Source="/bin/debug/logo.png"  HorizontalAlignment="Left" Height="68" Margin="714,491,0,0" VerticalAlignment="Top" Width="68" RenderTransformOrigin="0.456,0.5"/>
 
     </Grid>

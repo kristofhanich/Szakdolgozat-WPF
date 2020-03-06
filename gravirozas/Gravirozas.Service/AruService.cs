@@ -35,7 +35,7 @@ namespace Gravirozas.Service
             return response;
         }
 
-
+        /*
         public ResponseMessage<Aru> Felvitel(string nev, string tipus, int mennyiseg, int ar)
         {
             ResponseMessage<Aru> response = new ResponseMessage<Aru>();
@@ -55,7 +55,7 @@ namespace Gravirozas.Service
             return response;
         }
 
-
+    */
         public ResponseMessage<Aru> Update(Aru entity)
         {
             ResponseMessage<Aru> response = new ResponseMessage<Aru>();

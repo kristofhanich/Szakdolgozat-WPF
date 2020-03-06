@@ -23,15 +23,15 @@
         <Label x:Name="dateL" Content="Határidő:" HorizontalAlignment="Left" Margin="475,151,0,0" VerticalAlignment="Top" Width="56"/>
         <Label Content="Teljes ár:" HorizontalAlignment="Left" Margin="475,119,0,0" VerticalAlignment="Top"/>
         <Label x:Name="teljesarL" Content="" HorizontalAlignment="Left" Margin="546,121,0,0" VerticalAlignment="Top"/>
-        <ListView Name="rendelesekLista" HorizontalAlignment="Left" Height="200" Margin="10,240,0,0" VerticalAlignment="Top" Width="780" Foreground="#DDFF0000">
+        <ListView Name="rendelesekLista" HorizontalAlignment="Left" Height="200" Margin="10,240,0,0" VerticalAlignment="Top" Width="780" Foreground="#DD000000">
             <ListView.View>
                 <GridView>
-                    <GridViewColumn Header="Rendelő"/>
-                    <GridViewColumn Header="Rendelt áru"/>
-                    <GridViewColumn Header="Dátum"/>
-                    <GridViewColumn Header="Határidő"/>
-                    <GridViewColumn Header="Darab"/>
-                    <GridViewColumn Header="Fizetendő"/>
+                    <GridViewColumn Header="Rendelő" DisplayMemberBinding="{Binding UgyfelNev}"/>
+                    <GridViewColumn Header="Rendelt áru" DisplayMemberBinding="{Binding AruNev}"/>
+                    <GridViewColumn Header="Dátum" DisplayMemberBinding="{Binding Datum}"/>
+                    <GridViewColumn Header="Határidő" DisplayMemberBinding="{Binding HatarIdo}"/>
+                    <GridViewColumn Header="Darab" DisplayMemberBinding="{Binding Darab}"/>
+                    <GridViewColumn Header="Fizetendő" DisplayMemberBinding="{Binding TeljesAr}"/>
                 </GridView>
             </ListView.View>
         </ListView>
