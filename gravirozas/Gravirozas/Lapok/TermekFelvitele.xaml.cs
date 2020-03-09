@@ -35,8 +35,8 @@ namespace Gravirozas.Lapok
 
         private void Felvitel_Click(object sender, RoutedEventArgs e)
         {
-
-            if (NevTB.Text == "" || LeirasTB.Text == "" || ArTB.Text == "" || DarabTB.Text == ""  || KepTB.Text == "")
+            string richText = new TextRange(LeirasTB.Document.ContentStart, LeirasTB.Document.ContentEnd).Text;
+            if (NevTB.Text == "" || richText == "" || ArTB.Text == "" || DarabTB.Text == ""  || KepTB.Text == "")
             {
                 MessageBox.Show("Minden mező kitöltése kötelező!");
                 return;
@@ -50,7 +50,7 @@ namespace Gravirozas.Lapok
                 Aru entity = new Aru()
                 {
                     Nev = NevTB.Text,
-                    Leiras = LeirasTB.Text,
+                    Leiras = richText,
                     Mennyiseg = int.Parse(DarabTB.Text),
                     Ar = int.Parse(ArTB.Text),
                     Kep = KepTB.Text
@@ -71,7 +71,7 @@ namespace Gravirozas.Lapok
         private void Talloz_Click(object sender, RoutedEventArgs e)
         {
             OpenFileDialog openFileDialog = new OpenFileDialog();
-            openFileDialog.Filter = "Kép fájlok (*.jpg, *.png)|*.jpg ; *.png";
+            openFileDialog.Filter = "Kép fájlok (*.jpg, *.png)|*.jpg;*.png";
             string nev="";
             if (openFileDialog.ShowDialog() == true)
             {

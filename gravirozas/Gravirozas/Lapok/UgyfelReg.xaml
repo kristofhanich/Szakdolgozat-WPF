@@ -5,17 +5,17 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:Gravirozas.Lapok"
       mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="800"
+      d:DesignHeight="200" d:DesignWidth="300"
       Title="UgyfelReg">
 
     <Grid Background="White">
-        <Label Content="Ügyfél neve:" HorizontalAlignment="Left" Margin="277,176,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="UgyfelTB" HorizontalAlignment="Left" Margin="400,176,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <Label Content="Cím:" HorizontalAlignment="Left" Margin="319,207,0,0" VerticalAlignment="Top"/>
-        <Label Content="Telefonszám:" HorizontalAlignment="Left" Margin="274,238,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="CimTB" HorizontalAlignment="Left" Margin="400,211,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="TelefonTB" HorizontalAlignment="Left" Margin="400,246,0,0" Text="+36" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <Button x:Name="Regisztral" Content="Regisztrál" HorizontalAlignment="Left" Margin="351,323,0,0" VerticalAlignment="Top" Height="29" Width="103" Click="Regisztral_Click" Background="#FF3246C1" BorderBrush="#FF3246C1"/>
+        <Label Content="Ügyfél neve:" HorizontalAlignment="Left" Margin="10,9,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="UgyfelTB" HorizontalAlignment="Left" Margin="133,9,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <Label Content="Cím:" HorizontalAlignment="Left" Margin="52,40,0,0" VerticalAlignment="Top"/>
+        <Label Content="Telefonszám:" HorizontalAlignment="Left" Margin="7,71,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="CimTB" HorizontalAlignment="Left" Margin="133,44,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="TelefonTB" HorizontalAlignment="Left" Margin="133,79,0,0" Text="+36" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <Button x:Name="Regisztral" Content="Regisztrál" HorizontalAlignment="Left" Margin="84,156,0,0" VerticalAlignment="Top" Height="29" Width="103" Click="Regisztral_Click" Background="#FF3246C1" BorderBrush="#FF3246C1"/>
 
     </Grid>
 </Page>

@@ -4,15 +4,14 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:Gravirozas.Lapok"
-      mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="800"
-      Title="AruFeltolt">
+      mc:Ignorable="d"
+      Title="AruFeltolt" Height="153.75" Width="308.75">
 
     <Grid Background="White">
-        <Button x:Name="feltoltB" Content="Feltölt" HorizontalAlignment="Center" Margin="0,322,0,0" VerticalAlignment="Top" Height="35" Width="100" Click="feltoltB_Click" Background="#FF3246C1" BorderBrush="#FF3146C3"/>
-        <ComboBox x:Name="arunevCB" HorizontalAlignment="Left" Margin="334,239,0,0" VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="mennyisegTB" HorizontalAlignment="Left" Margin="408,283,0,0" Text=" " TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <Label Content="Ennyi darab van:" HorizontalAlignment="Left" Margin="286,279,0,0" VerticalAlignment="Top"/>
+        <Button x:Name="feltoltB" Content="Feltölt" HorizontalAlignment="Right" VerticalAlignment="Top" Height="34" Width="100" Click="feltoltB_Click" Background="#FF3246C1" BorderBrush="#FF3146C3" Margin="0,98,107,0" />
+        <ComboBox x:Name="arunevCB" HorizontalAlignment="Left" Margin="82,11,0,0" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="mennyisegTB" HorizontalAlignment="Left" Margin="156,55,0,0" Text=" " TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <Label Content="Ennyi darab van:" HorizontalAlignment="Left" Margin="34,51,0,0" VerticalAlignment="Top"/>
 
     </Grid>
 </Page>
