@@ -55,12 +55,12 @@ namespace Gravirozas.Lapok
 
             foreach (var item in request_ugy.ResponseObject)
             {
-                UgyfelCB.Items.Add(item.Id + " " + item.Nev);
+                UgyfelCB.Items.Add(item.Id+" "+item.Nev);
             }
 
             foreach (var item in request_aru.ResponseObject)
             {
-                VasaroltAruCB.Items.Add(item.Id + " " + item.Nev);
+                VasaroltAruCB.Items.Add(item.Id+" "+item.Nev);
             }
 
             HataridoDP.DisplayDateStart = DateTime.Now;
