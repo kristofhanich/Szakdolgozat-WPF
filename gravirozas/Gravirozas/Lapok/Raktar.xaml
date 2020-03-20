@@ -8,7 +8,7 @@
       Title="raktar" Height="600" Width="900">
 
     <Grid Background="White" Margin="10,0,0,0">
-        <Grid Background="White" Margin="163,0,154,277" HorizontalAlignment="Center" Width="573">
+        <Grid Background="White" Margin="163,0,154,277" HorizontalAlignment="Center" Width="600">
             <Image x:Name="Kep" Height="313" Margin="10,0" VerticalAlignment="Top"  />
         </Grid>
         <Label x:Name="AruNeveL" Content="Árucikk neve" HorizontalAlignment="Left" Margin="400,323,0,0" VerticalAlignment="Top" Height="36" Width="116"/>

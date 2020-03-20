@@ -5,16 +5,19 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:Gravirozas.Lapok"
       mc:Ignorable="d"
-      Title="AruFeltolt" Height="500" Width="800">
+      Title="AruFeltolt" Height="600" Width="900">
 
-    <Grid Background="White" Margin="-102,-223,-174,-152">
-        <Grid Background="White" Margin="131,37,153,383" HorizontalAlignment="Center" Width="792">
-            <Image x:Name="Kep" Height="435" Margin="10,10,10,0" VerticalAlignment="Top"  />
+    <Grid Margin="0,0,0,0">
+        <Grid Margin="150,0,150,300" HorizontalAlignment="Center" Width="600">
+            <Image x:Name="Kep"  Margin="10,10,10,0" VerticalAlignment="Top"  />
         </Grid>
-        <Button x:Name="feltoltB" Content="Feltölt" HorizontalAlignment="Left" VerticalAlignment="Top" Height="34" Width="100" Click="feltoltB_Click" Background="#FF3246C1" BorderBrush="#FF3146C3" Margin="543,750,0,0" />
-        <ComboBox x:Name="arunevCB" HorizontalAlignment="Left" Margin="504,650,0,0" VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="mennyisegTB" HorizontalAlignment="Left" Margin="578,694,0,0" Text=" " TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <Label Content="Ennyi darab van:" HorizontalAlignment="Left" Margin="456,690,0,0" VerticalAlignment="Top"/>
+        <Grid HorizontalAlignment="Center" Margin="225,305,225,0">
+            <Button x:Name="feltoltB" Content="Feltölt" HorizontalAlignment="Center" VerticalAlignment="Top" Height="48" Width="114" Click="feltoltB_Click" Background="#FF3246C1" BorderBrush="#FF3146C3" Margin="126,240,110,0" />
+            <ComboBox x:Name="arunevCB" Text="Termék választása" HorizontalAlignment="Center" Margin="-12,23,0,0" VerticalAlignment="Top" Height="39" SelectionChanged="ArunevCB_SelectionChanged"/>
+            <TextBox x:Name="mennyisegTB" HorizontalAlignment="Left" Margin="176,157,0,0" Text=" " TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+            <Label Content="Ennyi darab van:" HorizontalAlignment="Left" Margin="54,157,0,0" VerticalAlignment="Top"/>
+        </Grid>
+
 
     </Grid>
 </Page>

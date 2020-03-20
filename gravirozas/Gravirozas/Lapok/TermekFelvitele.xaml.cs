@@ -77,7 +77,7 @@ namespace Gravirozas.Lapok
             {
                 nev = openFileDialog.FileName;
                 KepTB.Text = nev;
-                File.Copy(nev, $"./{openFileDialog.SafeFileName}", true);
+                File.Copy(nev, $"./{NevTB.Text}.jpg", true);
             }
         }
     }
