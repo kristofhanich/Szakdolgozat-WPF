@@ -5,17 +5,25 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:Gravirozas.Lapok"
       mc:Ignorable="d" 
-      d:DesignHeight="200" d:DesignWidth="300"
-      Title="UgyfelReg">
+      d:DesignHeight="450"
+      Title="UgyfelReg1" Width="411.25">
 
-    <Grid Background="White">
-        <Label Content="Ügyfél neve:" HorizontalAlignment="Left" Margin="10,9,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="UgyfelTB" HorizontalAlignment="Left" Margin="133,9,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <Label Content="Cím:" HorizontalAlignment="Left" Margin="52,40,0,0" VerticalAlignment="Top"/>
-        <Label Content="Telefonszám:" HorizontalAlignment="Left" Margin="7,71,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="CimTB" HorizontalAlignment="Left" Margin="133,44,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="TelefonTB" HorizontalAlignment="Left" Margin="133,79,0,0" Text="+36" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <Button x:Name="Regisztral" Content="Regisztrál" HorizontalAlignment="Left" Margin="84,156,0,0" VerticalAlignment="Top" Height="29" Width="103" Click="Regisztral_Click" Background="#FF3246C1" BorderBrush="#FF3246C1"/>
-
+    <Grid>
+        <Label Content="Ügyfél neve:" HorizontalAlignment="Left" Margin="76,9,0,0" VerticalAlignment="Top" Height="24" Width="73"/>
+        <TextBox x:Name="UgyfelTB" HorizontalAlignment="Left" Margin="199,9,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Height="25"/>
+        <Label Content="Cím:" HorizontalAlignment="Left" Margin="118,40,0,0" VerticalAlignment="Top" Height="24" Width="31"/>
+        <Label Content="Telefonszám:" HorizontalAlignment="Left" Margin="73,71,0,0" VerticalAlignment="Top" Height="24" Width="76"/>
+        <TextBox x:Name="CimTB" HorizontalAlignment="Left" Margin="199,44,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Height="25"/>
+        <TextBox x:Name="TelefonTB" HorizontalAlignment="Left" Margin="199,79,0,0" Text="+36" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Height="25"/>
+        <Button x:Name="Regisztral" Content="Regisztrál" HorizontalAlignment="Left" Margin="150,156,0,0" VerticalAlignment="Top" Height="29" Width="103" Click="Regisztral_Click" Background="#FF3246C1" BorderBrush="#FF3246C1"/>
+        <ListView Name="ugyfelekLista" HorizontalAlignment="Left" Height="216" Margin="10,202,0,0" VerticalAlignment="Top" Width="373" Foreground="#DD000000">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Ügyfél" DisplayMemberBinding="{Binding Nev}"/>
+                    <GridViewColumn Header="Lakcím" DisplayMemberBinding="{Binding Cim}"/>
+                    <GridViewColumn Header="Telefonszám" DisplayMemberBinding="{Binding Telefonszam}"/>
+                </GridView>
+            </ListView.View>
+        </ListView>
     </Grid>
 </Page>

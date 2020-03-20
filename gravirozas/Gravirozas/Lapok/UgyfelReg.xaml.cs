@@ -19,17 +19,39 @@ using System.Windows.Shapes;
 namespace Gravirozas.Lapok
 {
     /// <summary>
-    /// Interaction logic for UgyfelReg.xaml
+    /// Interaction logic for UgyfelReg1.xaml
     /// </summary>
     public partial class UgyfelReg : Page
     {
         private readonly UgyfelService _ugyfelService = null;
+        private readonly UgyfelListaService _ugyfelListaService = null;
         public UgyfelReg()
         {
             _ugyfelService = new UgyfelService();
+            _ugyfelListaService = new UgyfelListaService();
+
             InitializeComponent();
+            FeltoltLista();
         }
 
+        private void FeltoltLista()
+        {
+            /*Lista feltöltése*/
+            /*https://www.wpf-tutorial.com/listview-control/listview-with-gridview/ */
+            List<Ugyfel> lista = new List<Ugyfel>();
+
+            ResponseMessage<List<Ugyfel>> request_ugyfelLista = _ugyfelListaService.GetAll();
+            if (request_ugyfelLista == null || !request_ugyfelLista.IsSuccess || request_ugyfelLista.ResponseObject == null)
+            {
+                MessageBox.Show(request_ugyfelLista.ErrorMessage);
+            }
+
+            foreach (var item in request_ugyfelLista.ResponseObject)
+            {
+                lista.Add(item);
+            }
+            ugyfelekLista.ItemsSource = lista;
+        }
 
         private void Regisztral_Click(object sender, RoutedEventArgs e)
         {
@@ -38,6 +60,7 @@ namespace Gravirozas.Lapok
                 MessageBox.Show("Minden mező kitöltése kötelező!");
                 return;
             }
+
             else
             {
                 Ugyfel entity = new Ugyfel()
@@ -50,6 +73,7 @@ namespace Gravirozas.Lapok
                 if (entity != null)
                 {
                     MessageBox.Show("Ügyfél felvitele sikeres!");
+                    FeltoltLista();
                 }
                 else
                 {
@@ -60,5 +84,6 @@ namespace Gravirozas.Lapok
             CimTB.Text = "";
             TelefonTB.Text = "";
         }
-    }
+    
+}
 }

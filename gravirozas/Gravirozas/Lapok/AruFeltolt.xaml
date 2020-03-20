@@ -5,13 +5,16 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:Gravirozas.Lapok"
       mc:Ignorable="d"
-      Title="AruFeltolt" Height="153.75" Width="308.75">
+      Title="AruFeltolt" Height="500" Width="800">
 
-    <Grid Background="White">
-        <Button x:Name="feltoltB" Content="Feltölt" HorizontalAlignment="Right" VerticalAlignment="Top" Height="34" Width="100" Click="feltoltB_Click" Background="#FF3246C1" BorderBrush="#FF3146C3" Margin="0,98,107,0" />
-        <ComboBox x:Name="arunevCB" HorizontalAlignment="Left" Margin="82,11,0,0" VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="mennyisegTB" HorizontalAlignment="Left" Margin="156,55,0,0" Text=" " TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <Label Content="Ennyi darab van:" HorizontalAlignment="Left" Margin="34,51,0,0" VerticalAlignment="Top"/>
+    <Grid Background="White" Margin="-102,-223,-174,-152">
+        <Grid Background="White" Margin="131,37,153,383" HorizontalAlignment="Center" Width="792">
+            <Image x:Name="Kep" Height="435" Margin="10,10,10,0" VerticalAlignment="Top"  />
+        </Grid>
+        <Button x:Name="feltoltB" Content="Feltölt" HorizontalAlignment="Left" VerticalAlignment="Top" Height="34" Width="100" Click="feltoltB_Click" Background="#FF3246C1" BorderBrush="#FF3146C3" Margin="543,750,0,0" />
+        <ComboBox x:Name="arunevCB" HorizontalAlignment="Left" Margin="504,650,0,0" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="mennyisegTB" HorizontalAlignment="Left" Margin="578,694,0,0" Text=" " TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <Label Content="Ennyi darab van:" HorizontalAlignment="Left" Margin="456,690,0,0" VerticalAlignment="Top"/>
 
     </Grid>
 </Page>

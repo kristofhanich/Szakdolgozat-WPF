@@ -35,7 +35,7 @@ namespace Gravirozas.Lapok
         public void Feltolt(int id)
         {
             AruNeveL.Content = aruk[id].Nev;
-            LeirasL.Content = aruk[id].Leiras;
+            LeirasTB.Text = aruk[id].Leiras;
             ArL.Content = aruk[id].Ar + " Ft";
             AruDarabL.Content = aruk[id].Mennyiseg;
             string eleres = System.IO.Path.GetFullPath(aruk[id].Kep);
