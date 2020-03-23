@@ -8,10 +8,10 @@
       d:DesignHeight="350"
       Title="TermekFelvitele" Foreground="White" OpacityMask="White" Background="#FFF9F9F9" Width="410">
 
-    <Grid Background="White" Margin="1,1,0,-40" HorizontalAlignment="Left" Width="409" RenderTransformOrigin="0.499,0.527">
+    <Grid Background="White" Margin="0,0,0,0" HorizontalAlignment="Left" Width="409" RenderTransformOrigin="0.499,0.527">
         <Label Content="db van belőle" HorizontalAlignment="Left" Margin="162,218,0,0" VerticalAlignment="Top"/>
         <Label Content="Ár:" HorizontalAlignment="Left" Margin="120,192,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="ArTB" HorizontalAlignment="Left" Margin="159,196,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Foreground="Black"/>
+        <TextBox x:Name="ArTB" HorizontalAlignment="Left" Margin="159,196,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Foreground="Black" BorderBrush="#89000000"/>
         <TextBox x:Name="DarabTB" HorizontalAlignment="Left" Margin="120,224,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="37" Foreground="Black"/>
         <Button x:Name="Felvitel" Content="Felvitel"  Height="30" Click="Felvitel_Click" Background="#FF3246C1" BorderBrush="#FF3246C1" Foreground="White" VerticalAlignment="Top" Margin="159,353,157,0"/>
         <Label Content="Leírás" HorizontalAlignment="Left" Margin="92,28,0,0" VerticalAlignment="Top"/>

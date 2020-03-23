@@ -41,12 +41,20 @@ namespace Gravirozas.Lapok
                 MessageBox.Show("Minden mező kitöltése kötelező!");
                 return;
             }
-            if (int.Parse(ArTB.Text) < 0 || int.Parse(DarabTB.Text) < 0)
+            if (System.Text.RegularExpressions.Regex.IsMatch(ArTB.Text, "[^0-99]") ||  int.Parse(ArTB.Text) < 0)
             {
-                MessageBox.Show("Negatív érték nem adható meg!");
+                MessageBox.Show("Hibás a bevitt érték!");
+                ArTB.BorderBrush = Brushes.Red;
+            }
+            else if (System.Text.RegularExpressions.Regex.IsMatch(DarabTB.Text, "[^0-99]") || int.Parse(DarabTB.Text) < 0)
+            {
+                MessageBox.Show("Hibás a bevitt érték!");
+                DarabTB.BorderBrush = Brushes.Red;
             }
             else
             {
+                ArTB.BorderBrush = default;
+                DarabTB.BorderBrush = default;
                 Aru entity = new Aru()
                 {
                     Nev = NevTB.Text,
