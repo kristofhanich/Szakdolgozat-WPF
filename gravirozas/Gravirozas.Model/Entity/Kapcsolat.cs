@@ -15,8 +15,7 @@ namespace Gravirozas.Model.Entity
         public int TeljesAr { get; set; }
 
         public Kapcsolat()
-        {
-        }
+        { }
 
         public Kapcsolat(int iD, int ugyfelID, int aruID, DateTime datum, DateTime hatarIdo, int darab, int teljesAr)
         {
@@ -33,6 +32,5 @@ namespace Gravirozas.Model.Entity
         {
             return $"{UgyfelID}";
         }
-
     }
 }

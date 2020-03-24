@@ -17,9 +17,6 @@ using System.Windows.Shapes;
 
 namespace Gravirozas.Lapok
 {
-    /// <summary>
-    /// Interaction logic for raktar.xaml
-    /// </summary>
     public partial class raktar : Page
     {
         private readonly AruService _aruService = null;
@@ -34,12 +31,20 @@ namespace Gravirozas.Lapok
         }
         public void Feltolt(int id)
         {
-            AruNeveL.Content = aruk[id].Nev;
-            LeirasTB.Text = aruk[id].Leiras;
-            ArL.Content = aruk[id].Ar + " Ft";
-            AruDarabL.Content = aruk[id].Mennyiseg;
-            string eleres = System.IO.Path.GetFullPath(aruk[id].Kep);
-            Kep.Source = new BitmapImage(new Uri(eleres));
+            try
+            {
+                AruNeveL.Content = aruk[id].Nev;
+                LeirasTB.Text = aruk[id].Leiras;
+                ArL.Content = aruk[id].Ar + " Ft";
+                AruDarabL.Content = aruk[id].Mennyiseg;
+                string eleres = System.IO.Path.GetFullPath(aruk[id].Kep);
+                Kep.Source = new BitmapImage(new Uri(eleres));
+            }
+
+            catch (Exception)
+            {
+                MessageBox.Show("Nincsenek termékek!");
+            }
         }
         private void PrevBtn_Click(object sender, RoutedEventArgs e)
         {
@@ -48,6 +53,7 @@ namespace Gravirozas.Lapok
             {
                 szamlalo = aruk.Count - 1;
             }
+
             Feltolt(szamlalo);
         }
 
@@ -58,6 +64,7 @@ namespace Gravirozas.Lapok
             {
                 szamlalo = 0;
             }
+
             Feltolt(szamlalo);
         }
     }

@@ -26,6 +26,7 @@ namespace Gravirozas.Service
                 response.IsSuccess = true;
                 response.ErrorMessage = "Success";
             }
+
             catch (Exception ex)
             {
                 response.IsSuccess = false;
@@ -35,27 +36,6 @@ namespace Gravirozas.Service
             return response;
         }
 
-        /*
-        public ResponseMessage<Aru> Felvitel(string nev, string tipus, int mennyiseg, int ar)
-        {
-            ResponseMessage<Aru> response = new ResponseMessage<Aru>();
-
-            try
-            {
-                response.ResponseObject = _aruRepository.Felvitel(nev, tipus, mennyiseg, ar);
-                response.IsSuccess = true;
-                response.ErrorMessage = "Success";
-            }
-            catch (Exception ex)
-            {
-                response.IsSuccess = false;
-                response.ErrorMessage = ex.Message;
-            }
-
-            return response;
-        }
-
-    */
         public ResponseMessage<Aru> Update(Aru entity)
         {
             ResponseMessage<Aru> response = new ResponseMessage<Aru>();
@@ -85,6 +65,7 @@ namespace Gravirozas.Service
                 response.IsSuccess = true;
                 response.ErrorMessage = "Success";
             }
+
             catch (Exception ex)
             {
                 response.IsSuccess = false;
@@ -103,6 +84,7 @@ namespace Gravirozas.Service
                 response.IsSuccess = _aruRepository.Delete(id);
                 response.ErrorMessage = "Success";
             }
+
             catch (Exception ex)
             {
                 response.IsSuccess = false;
@@ -119,9 +101,9 @@ namespace Gravirozas.Service
             {
                 response = _aruRepository.Elerheto(id);
             }
+
             catch (Exception ex)
-            {
-            }
+            { }
 
             return response;
         }
@@ -136,6 +118,7 @@ namespace Gravirozas.Service
                 response.IsSuccess = true;
                 response.ErrorMessage = "Success";
             }
+
             catch (Exception ex)
             {
                 response.IsSuccess = false;
@@ -155,6 +138,7 @@ namespace Gravirozas.Service
                 response.IsSuccess = true;
                 response.ErrorMessage = "Success";
             }
+
             catch (Exception ex)
             {
                 response.IsSuccess = false;
@@ -174,6 +158,7 @@ namespace Gravirozas.Service
                 response.IsSuccess = true;
                 response.ErrorMessage = "Success";
             }
+
             catch (Exception ex)
             {
                 response.IsSuccess = false;

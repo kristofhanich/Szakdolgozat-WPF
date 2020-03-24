@@ -8,7 +8,7 @@ AS
 BEGIN
 INSERT INTO [dbo].Kapcsolat
 (
-[UgyfelID],[AruID],[Datum],[Darab],HatarIdo,[TeljesAr]
+[UgyfelID],[AruID],[Datum],[Darab],[HatarIdo],[TeljesAr]
 )
 VALUES
 (

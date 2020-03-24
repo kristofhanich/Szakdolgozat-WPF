@@ -10,7 +10,6 @@ namespace Gravirozas.Service
     public class KapcsolatListaService
     {
         private readonly KapcsolatListaRepository _kapcsolatListaRepository = null;
-
         public KapcsolatListaService()
         {
             _kapcsolatListaRepository = new KapcsolatListaRepository();
@@ -25,6 +24,7 @@ namespace Gravirozas.Service
                 response.IsSuccess = true;
                 response.ErrorMessage = "Success";
             }
+
             catch (Exception ex)
             {
                 response.IsSuccess = false;

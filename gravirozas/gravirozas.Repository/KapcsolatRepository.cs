@@ -9,7 +9,6 @@ namespace Gravirozas.Repository
 {
     public class KapcsolatRepository
     {
-
         public Kapcsolat Create(Kapcsolat entity)
         {
             using (SqlConnection connection = new SqlConnection(Connection.String))

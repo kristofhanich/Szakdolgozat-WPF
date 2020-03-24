@@ -6,19 +6,19 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:Gravirozas.Lapok"
       mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="800"
+      d:DesignHeight="500" d:DesignWidth="800"
       Title="Rendeles">
 
     <Grid Background="White">
         <Label Content="Ügyfél:" HorizontalAlignment="Left" Margin="310,44,0,0" VerticalAlignment="Top" Width="46"/>
         <Label Content="Vásárolt árucikk:" HorizontalAlignment="Left" Margin="261,75,0,0" VerticalAlignment="Top"/>
-        <ComboBox x:Name="VasaroltAruCB" SelectionChanged="VasaroltAruCB_SelectionChanged" HorizontalAlignment="Left" Margin="364,77,0,0" VerticalAlignment="Top" Width="120"/>
+        <ComboBox x:Name="VasaroltAruCB" SelectionChanged="VasaroltAruCB_SelectionChanged" HorizontalAlignment="Left" Margin="364,77,0,0" VerticalAlignment="Top"/>
         <Label Content="Darabszám:" HorizontalAlignment="Left" Margin="295,150,0,0" VerticalAlignment="Top"/>
-        <ComboBox x:Name="UgyfelCB"  HorizontalAlignment="Left" Margin="364,44,0,0" VerticalAlignment="Top" Width="120"/>
+        <ComboBox x:Name="UgyfelCB"  HorizontalAlignment="Left" Margin="364,44,0,0" VerticalAlignment="Top" />
         <Label Content="Elérhető:" HorizontalAlignment="Left" Margin="300,119,0,0" VerticalAlignment="Top"/>
         <Label x:Name="ElerhetoL" Content="db" HorizontalAlignment="Left" Margin="374,119,0,0" VerticalAlignment="Top"/>
         <Button x:Name="Lekeres" Content="Indít" HorizontalAlignment="Left" Margin="354,196,0,0" VerticalAlignment="Top" Height="29" Width="70" Click="Lekeres_Click" Background="#FF3246C1" BorderBrush="#FF3246C1"/>
-        <ComboBox x:Name="darabCB" SelectionChanged="darabCB_SelectionChanged" HorizontalAlignment="Left" Margin="366,152,0,0" VerticalAlignment="Top" Width="58" Height="24" IsEnabled="False"/>
+        <ComboBox x:Name="darabCB" SelectionChanged="darabCB_SelectionChanged" HorizontalAlignment="Left" Margin="366,148,0,0" VerticalAlignment="Top" Width="58" Height="28" IsEnabled="False"/>
         <DatePicker x:Name="HataridoDP" SelectedDateChanged="HataridoDP_SelectedDateChanged" HorizontalAlignment="Left" Margin="546,152,0,0" VerticalAlignment="Top"/>
         <Label x:Name="dateL" Content="Határidő:" HorizontalAlignment="Left" Margin="475,151,0,0" VerticalAlignment="Top" Width="56"/>
         <Label Content="Teljes ár:" HorizontalAlignment="Left" Margin="475,119,0,0" VerticalAlignment="Top"/>

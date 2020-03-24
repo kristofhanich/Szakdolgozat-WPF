@@ -22,7 +22,6 @@ namespace Gravirozas.Repository
                 command.Parameters.Add(new SqlParameter("@Ar", entity.Ar));
                 command.Parameters.Add(new SqlParameter("@Kep", entity.Kep));
 
-
                 connection.Open();
                 int result = (int)command.ExecuteScalar();
                 if (result < 1)
@@ -34,40 +33,7 @@ namespace Gravirozas.Repository
                 return entity;
             }
         }
-        /*
-        public Aru Felvitel(string nev, string leiras, int mennyiseg, int ar)
-        {
-            using (SqlConnection connection = new SqlConnection(Connection.String))
-            {
-                SqlCommand command = connection.CreateCommand();
-                command.CommandType = CommandType.StoredProcedure;
-                command.CommandText = "AruCreate";
 
-                command.Parameters.Add(new SqlParameter("@Nev", nev));
-                command.Parameters.Add(new SqlParameter("@Leiras", leiras));
-                command.Parameters.Add(new SqlParameter("@Mennyiseg", mennyiseg));
-                command.Parameters.Add(new SqlParameter("@Ar", ar));
-
-                connection.Open();
-                int result = (int)command.ExecuteScalar();
-                if (result < 1)
-                {
-                    throw new Exception("Error in AruCreate stored procedure.");
-                }
-                Aru entity = new Aru()
-                {
-                    Nev = nev,
-                    Leiras = leiras,
-                    Mennyiseg = mennyiseg,
-                    Ar = ar
-
-                };
-
-                entity.Id = (int)result;
-                return entity;
-            }
-        }
-        */
         public Aru Update(Aru entity)
         {
             using (SqlConnection connection = new SqlConnection(Connection.String))
@@ -82,7 +48,6 @@ namespace Gravirozas.Repository
                 command.Parameters.Add(new SqlParameter("@Mennyiseg", entity.Mennyiseg));
                 command.Parameters.Add(new SqlParameter("@Ar", entity.Ar));
                 command.Parameters.Add(new SqlParameter("@Kep", entity.Kep));
-
 
                 connection.Open();
                 int result = (int)command.ExecuteNonQuery();
@@ -181,7 +146,6 @@ namespace Gravirozas.Repository
                 SqlCommand command = connection.CreateCommand();
                 command.CommandType = CommandType.StoredProcedure;
                 command.CommandText = "AruGetByID";
-
 
                 command.Parameters.Add(new SqlParameter("@Id", id));
 

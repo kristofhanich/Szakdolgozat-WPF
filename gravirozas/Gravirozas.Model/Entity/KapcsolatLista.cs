@@ -10,8 +10,7 @@ namespace Gravirozas.Model.Entity
         public string AruNev { get; set; }
 
         public KapcsolatLista()
-        {
-        }
+        { }
 
         public KapcsolatLista(string ugyfelNev, string aruNev) : base()
         {
@@ -26,6 +25,4 @@ namespace Gravirozas.Model.Entity
             AruNev = aruNev;
         }
     }
-    
-
 }

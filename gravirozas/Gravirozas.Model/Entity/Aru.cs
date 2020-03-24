@@ -37,7 +37,5 @@ namespace Gravirozas.Model.Entity
             Ar = Aru.Ar;
             Kep = Aru.Kep;
         }
-        
-
     }
 }

@@ -18,9 +18,6 @@ using System.Windows.Shapes;
 
 namespace Gravirozas.Lapok
 {
-    /// <summary>
-    /// Interaction logic for UgyfelReg1.xaml
-    /// </summary>
     public partial class UgyfelReg : Page
     {
         private readonly UgyfelService _ugyfelService = null;
@@ -29,17 +26,13 @@ namespace Gravirozas.Lapok
         {
             _ugyfelService = new UgyfelService();
             _ugyfelListaService = new UgyfelListaService();
-
             InitializeComponent();
             FeltoltLista();
         }
 
         private void FeltoltLista()
         {
-            /*Lista feltöltése*/
-            /*https://www.wpf-tutorial.com/listview-control/listview-with-gridview/ */
             List<Ugyfel> lista = new List<Ugyfel>();
-
             ResponseMessage<List<Ugyfel>> request_ugyfelLista = _ugyfelListaService.GetAll();
             if (request_ugyfelLista == null || !request_ugyfelLista.IsSuccess || request_ugyfelLista.ResponseObject == null)
             {
@@ -75,6 +68,7 @@ namespace Gravirozas.Lapok
                     MessageBox.Show("Ügyfél felvitele sikeres!");
                     FeltoltLista();
                 }
+
                 else
                 {
                     MessageBox.Show("Ügyfél felvitele sikertelen!");
@@ -82,8 +76,7 @@ namespace Gravirozas.Lapok
             }
             UgyfelTB.Text = "";
             CimTB.Text = "";
-            TelefonTB.Text = "";
+            TelefonTB.Text = "+36";
         }
-    
-}
+    }
 }

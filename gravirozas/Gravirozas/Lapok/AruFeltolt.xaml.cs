@@ -17,10 +17,6 @@ using System.Windows.Shapes;
 
 namespace Gravirozas.Lapok
 {
-    /// <summary>
-    /// Interaction logic for AruFeltolt.xaml
-    /// </summary>
-
     public partial class AruFeltolt : Page
     {
         private readonly AruService _aruService = null;
@@ -30,28 +26,56 @@ namespace Gravirozas.Lapok
             _aruService = new AruService();
             aruk = _aruService.GetAll().ResponseObject;
             InitializeComponent();
-            arunevCB.SelectedIndex = 0;
-            for (int i = 0; i < aruk.Count; i++)
+            if (aruk.Count == 0)
             {
-                arunevCB.Items.Add(aruk[i].Id + "." + aruk[i].Nev);
+                MessageBox.Show("Nincsenek termékek!");
+            }
+
+            else
+            {
+                arunevCB.SelectedIndex = 0;
+                for (int i = 0; i < aruk.Count; i++)
+                {
+                    arunevCB.Items.Add(aruk[i].Id + "." + aruk[i].Nev);
+                }
             }
         }
 
         private void feltoltB_Click(object sender, RoutedEventArgs e)
         {
-            if (arunevCB.SelectedItem == null || mennyisegTB.Text == null)
+            if (aruk.Count == 0)
             {
-                MessageBox.Show("Minden mező kitöltése kötelező!");
+                MessageBox.Show("Nincsenek termékek!");
             }
-            int x = -1;
-            x = _aruService.UpdateMennyiseg(int.Parse(arunevCB.SelectedItem.ToString().Split('.')[0]), int.Parse(mennyisegTB.Text)).ResponseObject;
-            if (x < 0)
-            {
-                MessageBox.Show("Hiba a feltöltésben!");
-            }
+
             else
             {
-                MessageBox.Show("Sikeres feltöltés!");
+                if (arunevCB.SelectedItem == null || mennyisegTB.Text == "")
+                {
+                    MessageBox.Show("Minden mező kitöltése kötelező!");
+                }
+
+                else if (System.Text.RegularExpressions.Regex.IsMatch(mennyisegTB.Text, "[^0-99]"))
+                {
+                    MessageBox.Show("Hibás a bevitt érték!");
+                    mennyisegTB.BorderBrush = Brushes.Red;
+                }
+
+                else
+                {
+                    int x = -1;
+                    x = _aruService.UpdateMennyiseg(int.Parse(arunevCB.SelectedItem.ToString().Split('.')[0]), int.Parse(mennyisegTB.Text)).ResponseObject;
+                    if (x < 0)
+                    {
+                        MessageBox.Show("Hiba a feltöltésben!");
+                    }
+
+                    else
+                    {
+                        MessageBox.Show("Sikeres feltöltés!");
+                        mennyisegTB.BorderBrush = Brushes.Gray;
+                    }
+                }
             }
         }
 

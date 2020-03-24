@@ -18,9 +18,6 @@ using System.Windows.Shapes;
 
 namespace Gravirozas.Lapok
 {
-    /// <summary>
-    /// Interaction logic for Rendeles.xaml
-    /// </summary>
     public partial class Rendeles : Page
     {
         private readonly UgyfelService _ugyfelService = null;
@@ -34,7 +31,6 @@ namespace Gravirozas.Lapok
             _aruService = new AruService();
             _kapcsolatService = new KapcsolatService();
             _kapcsolatListaService = new KapcsolatListaService();
-
             InitializeComponent();
         }
         private void OnLoad(object sender, RoutedEventArgs e)
@@ -64,14 +60,11 @@ namespace Gravirozas.Lapok
             }
 
             HataridoDP.DisplayDateStart = DateTime.Now;
-
             FeltoltLista();
         }
 
         private void FeltoltLista()
         {
-            /*Lista feltöltése*/
-            /*https://www.wpf-tutorial.com/listview-control/listview-with-gridview/ */
             List<Kapcsolat> lista = new List<Kapcsolat>();
 
             ResponseMessage<List<KapcsolatLista>> request_kapcsolatLista = _kapcsolatListaService.GetAll();
@@ -82,9 +75,8 @@ namespace Gravirozas.Lapok
 
             foreach (var item in request_kapcsolatLista.ResponseObject)
             {
-                lista.Add(item);/*.UgyfelID , item.AruID, item.Datum, item.HatarIdo, item.Darab, item.TeljesAr}*/
+                lista.Add(item);
             }
-            //rendelesekLista.ItemsSource = lista;/*emiatt dob hibát*/
             rendelesekLista.ItemsSource = lista;
         }
 
@@ -92,20 +84,16 @@ namespace Gravirozas.Lapok
         {
             int request_menny = _aruService.Elerheto(id);
             darabCB.Items.Clear();
-
-            /*if (request_menny == null || !request_menny.IsSuccess)
-            {
-                MessageBox.Show(request_menny.ErrorMessage);
-            }*/
-                if (request_menny == 0)
+            if (request_menny == 0)
             {
                 ElerhetoL.Content = "Nem elérhető!";
                 darabCB.IsEnabled = false;
             }
+
             else
             {
                 darabCB.IsEnabled = true;
-                ElerhetoL.Content = request_menny;
+                ElerhetoL.Content = request_menny+ "db";
                 for (int i = 1; i <= request_menny; i++)
                 {
                     darabCB.Items.Add(i);
@@ -170,6 +158,7 @@ namespace Gravirozas.Lapok
                 Frissit(int.Parse(VasaroltAruCB.SelectedItem.ToString().Split(' ')[0]));
                 FeltoltLista();
             }
+
             else
             {
                 MessageBox.Show("Hiba a vásárlás rögzítésében!");

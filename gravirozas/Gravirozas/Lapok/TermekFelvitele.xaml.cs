@@ -20,10 +20,6 @@ using Gravirozas.Model;
 
 namespace Gravirozas.Lapok
 {
-    /// <summary>
-    /// Interaction logic for TermekFelvitele.xaml
-    /// </summary>
-
     public partial class TermekFelvitele : Page
     {
         private readonly AruService _aruService = null;
@@ -32,7 +28,6 @@ namespace Gravirozas.Lapok
             _aruService = new AruService();
             InitializeComponent();
         }
-
         private void Felvitel_Click(object sender, RoutedEventArgs e)
         {
             string richText = new TextRange(LeirasTB.Document.ContentStart, LeirasTB.Document.ContentEnd).Text;
@@ -53,8 +48,7 @@ namespace Gravirozas.Lapok
             }
             else
             {
-                ArTB.BorderBrush = default;
-                DarabTB.BorderBrush = default;
+                
                 Aru entity = new Aru()
                 {
                     Nev = NevTB.Text,
@@ -63,9 +57,7 @@ namespace Gravirozas.Lapok
                     Ar = int.Parse(ArTB.Text),
                     Kep = KepTB.Text
                 };
-
                 ResponseMessage<Aru> request = _aruService.Create(entity);
-
                 if (!request.IsSuccess)
                 {
                     MessageBox.Show(_aruService.Create(entity).ErrorMessage);
@@ -73,9 +65,15 @@ namespace Gravirozas.Lapok
                 }
 
                 MessageBox.Show("Sikeres árufelvitel!");
+                NevTB.Text = "";
+                LeirasTB.Document.Blocks.Clear();
+                ArTB.Text = "";
+                DarabTB.Text = "";
+                KepTB.Text = "";
+                ArTB.BorderBrush = Brushes.Gray;
+                DarabTB.BorderBrush = Brushes.Gray;
             }
         }
-
         private void Talloz_Click(object sender, RoutedEventArgs e)
         {
             OpenFileDialog openFileDialog = new OpenFileDialog();

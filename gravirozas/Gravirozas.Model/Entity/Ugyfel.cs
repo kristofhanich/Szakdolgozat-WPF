@@ -10,9 +10,8 @@ namespace Gravirozas.Model.Entity
         public string Nev { get; set; }
         public string Cim { get; set; }
         public string Telefonszam { get; set; }
-        public Ugyfel() { 
-        
-        }
+        public Ugyfel()
+        { }
 
         public Ugyfel(int id,string nev,string cim, string telefonszam)
         {
